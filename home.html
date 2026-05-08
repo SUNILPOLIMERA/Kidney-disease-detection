@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome to the Kidney Disease Detection App</h2>
+<p>Kidney diseases such as cysts, tumors, and stones are life-threatening conditions that require early and accurate detection for effective treatment. 
+   Traditional diagnostic methods using CT scans often depend on manual interpretation by radiologists, which can be time-consuming and prone to error. 
+   To address this challenge, we propose a deep learning–based automated system for multi-class kidney disease classification using CT images. 
+   The system utilizes EfficientNetV2B0, a state-of-the-art convolutional neural network, to extract deep features from CT scans. 
+   A custom classification head with Global Average Pooling, Dropout, and Dense layers is employed to classify images into four categories: Normal, Cyst, Tumor, and Stone. 
+   Data augmentation and class weighting are applied to handle dataset imbalance and improve generalization. The model achieves high accuracy and robustness, outperforming conventional CNN approaches. 
+   Furthermore, the trained model is integrated into a Flask web application, providing a user-friendly interface with functionality for image upload, real-time prediction with confidence scores, and visualization of training results through charts. 
+   This approach demonstrates the potential of advanced deep learning models combined with web deployment to support radiologists in fast, reliable, and scalable kidney disease diagnosis.</p>
+{% endblock %}

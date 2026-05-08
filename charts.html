@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Important Charts</h2>
+
+<p><strong>Class Distribution:</strong></p>
+<img src="{{ url_for('static', filename='chart.png') }}" style="max-width:500px;"><br><br>
+
+<p><strong>Model Accuracy & Loss Charts:</strong></p>
+<img src="{{ url_for('static', filename='download.png') }}" style="max-width:500px;"><br><br>
+<img src="{{ url_for('static', filename='download1.png') }}" style="max-width:500px;">
+
+{% endblock %}

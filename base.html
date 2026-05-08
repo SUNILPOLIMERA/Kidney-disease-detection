@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kidney Disease Detection</title>
+
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #f1f8e9);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #2e7d32;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            background: #1b5e20;
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #c8e6c9;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #2e7d32;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* ===== FORMS ===== */
+        form label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        form input:focus {
+            outline: none;
+            border-color: #2e7d32;
+        }
+
+        button {
+            width: 100%;
+            background: #2e7d32;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1b5e20;
+        }
+
+        /* ===== LINKS ===== */
+        a {
+            color: #2e7d32;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== ERROR MESSAGE ===== */
+        .error {
+            color: red;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Kidney Disease Detection</h1>
+</header>
+
+<nav>
+    <a href="{{ url_for('home') }}">Home</a>
+    {% if session.get('user') %}
+        <a href="{{ url_for('upload') }}">Upload</a>
+        <a href="{{ url_for('charts') }}">Charts</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('login') }}">Login</a>
+    {% endif %}
+</nav>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+<footer>
+    © 2026 Kidney Disease Detection | CT Scan Image Classification
+</footer>
+
+</body>
+</html>
